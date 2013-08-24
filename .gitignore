@@ -1,0 +1,11 @@
+# OS specific
+.DS_Store
+Thumbs.db
+
+# IDE specific
+.komodotools
+*.komodoproject
+.IDEA
+
+# Project specific
+*.box
