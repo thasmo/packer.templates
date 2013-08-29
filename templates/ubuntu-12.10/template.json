@@ -85,7 +85,13 @@
 			"shutdown_command": "echo 'vagrant' | sudo -S -E shutdown -P now",
 			"tools_upload_flavor": "linux",
 			"vmdk_name": "disk",
-			"disk_type_id": "0"
+			"disk_type_id": "0",
+			"vmx_data": {
+				"MemTrimRate": "0",
+				"sched.mem.pshare.enable": "FALSE",
+				"mainMem.useNamedFile": "FALSE",
+				"prefvmx.minVmMemPct": "100"
+			}
 		},
 		{
 			"name": "ubuntu-12.10.i386.vmware",
@@ -116,7 +122,13 @@
 			"shutdown_command": "echo 'vagrant' | sudo -S -E shutdown -P now",
 			"tools_upload_flavor": "linux",
 			"vmdk_name": "disk",
-			"disk_type_id": "0"
+			"disk_type_id": "0",
+			"vmx_data": {
+				"MemTrimRate": "0",
+				"sched.mem.pshare.enable": "FALSE",
+				"mainMem.useNamedFile": "FALSE",
+				"prefvmx.minVmMemPct": "100"
+			}
 		}
 	],
 	"provisioners": [
