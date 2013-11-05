@@ -26,7 +26,8 @@
 				"keyboard-configuration/variant=USA console-setup/ask_detect=false ",
 				"initrd=/install/initrd.gz -- <enter>"
 			],
-			"shutdown_command": "echo 'vagrant' | sudo -S -E shutdown -P now"
+			"shutdown_command": "echo 'vagrant' | sudo -S -E shutdown -P now",
+			"hard_drive_interface": "sata"
 		},
 		{
 			"name": "ubuntu-12.10.i386.virtualbox",
@@ -54,7 +55,8 @@
 				"keyboard-configuration/variant=USA console-setup/ask_detect=false ",
 				"initrd=/install/initrd.gz -- <enter>"
 			],
-			"shutdown_command": "echo 'vagrant' | sudo -S -E shutdown -P now"
+			"shutdown_command": "echo 'vagrant' | sudo -S -E shutdown -P now",
+			"hard_drive_interface": "sata"
 		},
 		{
 			"name": "ubuntu-12.10.amd64.vmware",
