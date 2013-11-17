@@ -4,7 +4,7 @@
 mkdir -p /mnt/vmware
 mount -o loop /home/vagrant/linux.iso /mnt/vmware
 
-# Extract setup setup
+# Extract setup file
 cd /tmp
 tar xzf /mnt/vmware/VMwareTools-*.tar.gz
 
