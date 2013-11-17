@@ -141,6 +141,7 @@
 				"ubuntu-13.10.amd64.virtualbox": {
 					"scripts": [
 						"../script/ubuntu/update.sh",
+						"../script/ubuntu/network.sh",
 						"../script/common/vagrant.sh",
 						"../script/common/virtualbox.sh",
 						"../script/ubuntu/cleanup.sh"
@@ -149,6 +150,7 @@
 				"ubuntu-13.10.i386.virtualbox": {
 					"scripts": [
 						"../script/ubuntu/update.sh",
+						"../script/ubuntu/network.sh",
 						"../script/common/vagrant.sh",
 						"../script/common/virtualbox.sh",
 						"../script/ubuntu/cleanup.sh"
@@ -157,6 +159,7 @@
 				"ubuntu-13.10.amd64.vmware": {
 					"scripts": [
 						"../script/ubuntu/update.sh",
+						"../script/ubuntu/network.sh",
 						"../script/common/vagrant.sh",
 						"../script/common/vmware.sh",
 						"../script/ubuntu/cleanup.sh"
@@ -165,6 +168,7 @@
 				"ubuntu-13.10.i386.vmware": {
 					"scripts": [
 						"../script/ubuntu/update.sh",
+						"../script/ubuntu/network.sh",
 						"../script/common/vagrant.sh",
 						"../script/common/vmware.sh",
 						"../script/ubuntu/cleanup.sh"
