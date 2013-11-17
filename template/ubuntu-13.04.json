@@ -12,7 +12,7 @@
 			"iso_checksum_type": "md5",
 			"ssh_username": "vagrant",
 			"ssh_password": "vagrant",
-			"http_directory": "http",
+			"http_directory": "../http/ubuntu/",
 			"headless": true,
 			"boot_wait": "5s",
 			"boot_command": [
@@ -41,7 +41,7 @@
 			"iso_checksum_type": "md5",
 			"ssh_username": "vagrant",
 			"ssh_password": "vagrant",
-			"http_directory": "http",
+			"http_directory": "../http/ubuntu/",
 			"headless": true,
 			"boot_wait": "5s",
 			"boot_command": [
@@ -70,7 +70,7 @@
 			"iso_checksum_type": "md5",
 			"ssh_username": "vagrant",
 			"ssh_password": "vagrant",
-			"http_directory": "http",
+			"http_directory": "../http/ubuntu/",
 			"headless": true,
 			"boot_wait": "5s",
 			"boot_command": [
@@ -107,7 +107,7 @@
 			"iso_checksum_type": "md5",
 			"ssh_username": "vagrant",
 			"ssh_password": "vagrant",
-			"http_directory": "http",
+			"http_directory": "../http/ubuntu/",
 			"headless": true,
 			"boot_wait": "5s",
 			"boot_command": [
@@ -140,34 +140,34 @@
 			"override": {
 				"ubuntu-13.04.amd64.virtualbox": {
 					"scripts": [
-						"script/base.sh",
-						"script/vagrant.sh",
-						"script/builder/virtualbox.sh",
-						"script/cleanup.sh"
+						"../script/ubuntu/update.sh",
+						"../script/common/vagrant.sh",
+						"../script/common/virtualbox.sh",
+						"../script/ubuntu/cleanup.sh"
 					]
 				},
 				"ubuntu-13.04.i386.virtualbox": {
 					"scripts": [
-						"script/base.sh",
-						"script/vagrant.sh",
-						"script/builder/virtualbox.sh",
-						"script/cleanup.sh"
+						"../script/ubuntu/update.sh",
+						"../script/common/vagrant.sh",
+						"../script/common/virtualbox.sh",
+						"../script/ubuntu/cleanup.sh"
 					]
 				},
 				"ubuntu-13.04.amd64.vmware": {
 					"scripts": [
-						"script/base.sh",
-						"script/vagrant.sh",
-						"script/builder/vmware.sh",
-						"script/cleanup.sh"
+						"../script/ubuntu/update.sh",
+						"../script/common/vagrant.sh",
+						"../script/common/vmware.sh",
+						"../script/ubuntu/cleanup.sh"
 					]
 				},
 				"ubuntu-13.04.i386.vmware": {
 					"scripts": [
-						"script/base.sh",
-						"script/vagrant.sh",
-						"script/builder/vmware.sh",
-						"script/cleanup.sh"
+						"../script/ubuntu/update.sh",
+						"../script/common/vagrant.sh",
+						"../script/common/vmware.sh",
+						"../script/ubuntu/cleanup.sh"
 					]
 				}
 			}
@@ -177,7 +177,7 @@
 	"post-processors": [
 		{
 			"type": "vagrant",
-			"output": "{{.BuildName}}.box"
+			"output": "../build/{{.BuildName}}.box"
 		}
 	]
 }

@@ -1,18 +1,18 @@
 {
 	"builders": [
 		{
-			"name": "ubuntu-12.04.amd64.virtualbox",
+			"name": "ubuntu-12.10.amd64.virtualbox",
 			"type": "virtualbox",
 			"guest_os_type": "Ubuntu_64",
 			"iso_urls": [
-				"http://releases.ubuntu.com/12.04/ubuntu-12.04.3-server-amd64.iso",
-				"http://nl.releases.ubuntu.com/12.04/ubuntu-12.04.3-server-amd64.iso"
+				"http://releases.ubuntu.com/12.10/ubuntu-12.10-server-amd64.iso",
+				"http://nl.releases.ubuntu.com/12.10/ubuntu-12.10-server-amd64.iso"
 			],
-			"iso_checksum": "2cbe868812a871242cdcdd8f2fd6feb9",
+			"iso_checksum": "4bd3270bde86d7e4e017e3847a4af485",
 			"iso_checksum_type": "md5",
 			"ssh_username": "vagrant",
 			"ssh_password": "vagrant",
-			"http_directory": "http",
+			"http_directory": "../http/ubuntu/",
 			"headless": true,
 			"boot_wait": "5s",
 			"boot_command": [
@@ -30,18 +30,18 @@
 			"hard_drive_interface": "sata"
 		},
 		{
-			"name": "ubuntu-12.04.i386.virtualbox",
+			"name": "ubuntu-12.10.i386.virtualbox",
 			"type": "virtualbox",
 			"guest_os_type": "Ubuntu",
 			"iso_urls": [
-				"http://releases.ubuntu.com/12.04/ubuntu-12.04.3-server-i386.iso",
-				"http://nl.releases.ubuntu.com/12.04/ubuntu-12.04.3-server-i386.iso"
+				"http://releases.ubuntu.com/12.10/ubuntu-12.10-server-i386.iso",
+				"http://nl.releases.ubuntu.com/12.10/ubuntu-12.10-server-i386.iso"
 			],
-			"iso_checksum": "e7917ff0543d8248d00ffb166def849e",
+			"iso_checksum": "b3d4d4edfc8f291af0b83f8a2ba19a2f",
 			"iso_checksum_type": "md5",
 			"ssh_username": "vagrant",
 			"ssh_password": "vagrant",
-			"http_directory": "http",
+			"http_directory": "../http/ubuntu/",
 			"headless": true,
 			"boot_wait": "5s",
 			"boot_command": [
@@ -59,18 +59,18 @@
 			"hard_drive_interface": "sata"
 		},
 		{
-			"name": "ubuntu-12.04.amd64.vmware",
+			"name": "ubuntu-12.10.amd64.vmware",
 			"type": "vmware",
 			"guest_os_type": "ubuntu-64",
 			"iso_urls": [
-				"http://releases.ubuntu.com/12.04/ubuntu-12.04.3-server-amd64.iso",
-				"http://nl.releases.ubuntu.com/12.04/ubuntu-12.04.3-server-amd64.iso"
+				"http://releases.ubuntu.com/12.10/ubuntu-12.10-server-amd64.iso",
+				"http://nl.releases.ubuntu.com/12.10/ubuntu-12.10-server-amd64.iso"
 			],
-			"iso_checksum": "2cbe868812a871242cdcdd8f2fd6feb9",
+			"iso_checksum": "4bd3270bde86d7e4e017e3847a4af485",
 			"iso_checksum_type": "md5",
 			"ssh_username": "vagrant",
 			"ssh_password": "vagrant",
-			"http_directory": "http",
+			"http_directory": "../http/ubuntu/",
 			"headless": true,
 			"boot_wait": "5s",
 			"boot_command": [
@@ -96,18 +96,18 @@
 			}
 		},
 		{
-			"name": "ubuntu-12.04.i386.vmware",
+			"name": "ubuntu-12.10.i386.vmware",
 			"type": "vmware",
 			"guest_os_type": "ubuntu",
 			"iso_urls": [
-				"http://releases.ubuntu.com/12.04/ubuntu-12.04.3-server-i386.iso",
-				"http://nl.releases.ubuntu.com/12.04/ubuntu-12.04.3-server-i386.iso"
+				"http://releases.ubuntu.com/12.10/ubuntu-12.10-server-i386.iso",
+				"http://nl.releases.ubuntu.com/12.10/ubuntu-12.10-server-i386.iso"
 			],
-			"iso_checksum": "e7917ff0543d8248d00ffb166def849e",
+			"iso_checksum": "b3d4d4edfc8f291af0b83f8a2ba19a2f",
 			"iso_checksum_type": "md5",
 			"ssh_username": "vagrant",
 			"ssh_password": "vagrant",
-			"http_directory": "http",
+			"http_directory": "../http/ubuntu/",
 			"headless": true,
 			"boot_wait": "5s",
 			"boot_command": [
@@ -138,36 +138,36 @@
 			"type": "shell",
 			"execute_command": "echo 'vagrant' | sudo -S -E sh {{.Path}}",
 			"override": {
-				"ubuntu-12.04.amd64.virtualbox": {
+				"ubuntu-12.10.amd64.virtualbox": {
 					"scripts": [
-						"script/base.sh",
-						"script/vagrant.sh",
-						"script/builder/virtualbox.sh",
-						"script/cleanup.sh"
+						"../script/ubuntu/update.sh",
+						"../script/common/vagrant.sh",
+						"../script/common/virtualbox.sh",
+						"../script/ubuntu/cleanup.sh"
 					]
 				},
-				"ubuntu-12.04.i386.virtualbox": {
+				"ubuntu-12.10.i386.virtualbox": {
 					"scripts": [
-						"script/base.sh",
-						"script/vagrant.sh",
-						"script/builder/virtualbox.sh",
-						"script/cleanup.sh"
+						"../script/ubuntu/update.sh",
+						"../script/common/vagrant.sh",
+						"../script/common/virtualbox.sh",
+						"../script/ubuntu/cleanup.sh"
 					]
 				},
-				"ubuntu-12.04.amd64.vmware": {
+				"ubuntu-12.10.amd64.vmware": {
 					"scripts": [
-						"script/base.sh",
-						"script/vagrant.sh",
-						"script/builder/vmware.sh",
-						"script/cleanup.sh"
+						"../script/ubuntu/update.sh",
+						"../script/common/vagrant.sh",
+						"../script/common/vmware.sh",
+						"../script/ubuntu/cleanup.sh"
 					]
 				},
-				"ubuntu-12.04.i386.vmware": {
+				"ubuntu-12.10.i386.vmware": {
 					"scripts": [
-						"script/base.sh",
-						"script/vagrant.sh",
-						"script/builder/vmware.sh",
-						"script/cleanup.sh"
+						"../script/ubuntu/update.sh",
+						"../script/common/vagrant.sh",
+						"../script/common/vmware.sh",
+						"../script/ubuntu/cleanup.sh"
 					]
 				}
 			}
@@ -177,7 +177,7 @@
 	"post-processors": [
 		{
 			"type": "vagrant",
-			"output": "{{.BuildName}}.box"
+			"output": "../build/{{.BuildName}}.box"
 		}
 	]
 }
