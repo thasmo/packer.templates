@@ -144,6 +144,7 @@
 						"../script/ubuntu/network.sh",
 						"../script/common/vagrant.sh",
 						"../script/common/virtualbox.sh",
+						"../script/common/motd.sh",
 						"../script/ubuntu/cleanup.sh"
 					]
 				},
@@ -153,6 +154,7 @@
 						"../script/ubuntu/network.sh",
 						"../script/common/vagrant.sh",
 						"../script/common/virtualbox.sh",
+						"../script/common/motd.sh",
 						"../script/ubuntu/cleanup.sh"
 					]
 				},
@@ -162,6 +164,7 @@
 						"../script/ubuntu/network.sh",
 						"../script/common/vagrant.sh",
 						"../script/common/vmware.sh",
+						"../script/common/motd.sh",
 						"../script/ubuntu/cleanup.sh"
 					]
 				},
@@ -171,6 +174,7 @@
 						"../script/ubuntu/network.sh",
 						"../script/common/vagrant.sh",
 						"../script/common/vmware.sh",
+						"../script/common/motd.sh",
 						"../script/ubuntu/cleanup.sh"
 					]
 				}
