@@ -6,6 +6,7 @@ Thumbs.db
 .komodotools
 *.komodoproject
 .IDEA
+*.iml
 
 # Project specific
 *.box
