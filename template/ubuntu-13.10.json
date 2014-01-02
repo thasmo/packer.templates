@@ -2,7 +2,7 @@
 	"builders": [
 		{
 			"name": "ubuntu-13.10.amd64.virtualbox",
-			"type": "virtualbox",
+			"type": "virtualbox-iso",
 			"guest_os_type": "Ubuntu_64",
 			"iso_urls": [
 				"http://releases.ubuntu.com/13.10/ubuntu-13.10-server-amd64.iso",
@@ -31,7 +31,7 @@
 		},
 		{
 			"name": "ubuntu-13.10.i386.virtualbox",
-			"type": "virtualbox",
+			"type": "virtualbox-iso",
 			"guest_os_type": "Ubuntu",
 			"iso_urls": [
 				"http://releases.ubuntu.com/13.10/ubuntu-13.10-server-i386.iso",
@@ -60,7 +60,7 @@
 		},
 		{
 			"name": "ubuntu-13.10.amd64.vmware",
-			"type": "vmware",
+			"type": "vmware-iso",
 			"guest_os_type": "ubuntu-64",
 			"iso_urls": [
 				"http://releases.ubuntu.com/13.10/ubuntu-13.10-server-amd64.iso",
@@ -97,7 +97,7 @@
 		},
 		{
 			"name": "ubuntu-13.10.i386.vmware",
-			"type": "vmware",
+			"type": "vmware-iso",
 			"guest_os_type": "ubuntu",
 			"iso_urls": [
 				"http://releases.ubuntu.com/13.10/ubuntu-13.10-server-i386.iso",
