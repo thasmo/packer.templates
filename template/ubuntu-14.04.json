@@ -1,0 +1,187 @@
+{
+	"builders": [
+		{
+			"name": "ubuntu-14.04.amd64.virtualbox",
+			"type": "virtualbox-iso",
+			"guest_os_type": "Ubuntu_64",
+			"iso_urls": [
+				"http://cdimage.ubuntu.com/ubuntu-server/daily/current/trusty-server-amd64.iso"
+			],
+			"iso_checksum": "abd10cda2fca9a94c925f47255194110",
+			"iso_checksum_type": "md5",
+			"ssh_username": "vagrant",
+			"ssh_password": "vagrant",
+			"http_directory": "../http/ubuntu/",
+			"headless": true,
+			"boot_wait": "5s",
+			"boot_command": [
+				"<esc><esc><enter><wait>",
+				"/install/vmlinuz ",
+				"preseed/url=http://{{.HTTPIP}}:{{.HTTPPort}}/preseed.cfg ",
+				"debian-installer=en_US auto locale=en_US kbd-chooser/method=us ",
+				"hostname={{.Name}} ",
+				"fb=false debconf/frontend=noninteractive ",
+				"keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=USA ",
+				"keyboard-configuration/variant=USA console-setup/ask_detect=false ",
+				"initrd=/install/initrd.gz -- <enter>"
+			],
+			"shutdown_command": "echo 'vagrant' | sudo -S -E shutdown -P now",
+			"hard_drive_interface": "sata"
+		},
+		{
+			"name": "ubuntu-14.04.i386.virtualbox",
+			"type": "virtualbox-iso",
+			"guest_os_type": "Ubuntu",
+			"iso_urls": [
+				"http://cdimage.ubuntu.com/ubuntu-server/daily/current/trusty-server-i386.iso"
+			],
+			"iso_checksum": "bc8e053a3d366c5e2768c557267f75a5",
+			"iso_checksum_type": "md5",
+			"ssh_username": "vagrant",
+			"ssh_password": "vagrant",
+			"http_directory": "../http/ubuntu/",
+			"headless": true,
+			"boot_wait": "5s",
+			"boot_command": [
+				"<esc><esc><enter><wait>",
+				"/install/vmlinuz ",
+				"preseed/url=http://{{.HTTPIP}}:{{.HTTPPort}}/preseed.cfg ",
+				"debian-installer=en_US auto locale=en_US kbd-chooser/method=us ",
+				"hostname={{.Name}} ",
+				"fb=false debconf/frontend=noninteractive ",
+				"keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=USA ",
+				"keyboard-configuration/variant=USA console-setup/ask_detect=false ",
+				"initrd=/install/initrd.gz -- <enter>"
+			],
+			"shutdown_command": "echo 'vagrant' | sudo -S -E shutdown -P now",
+			"hard_drive_interface": "sata"
+		},
+		{
+			"name": "ubuntu-14.04.amd64.vmware",
+			"type": "vmware-iso",
+			"guest_os_type": "ubuntu-64",
+			"iso_urls": [
+				"http://cdimage.ubuntu.com/ubuntu-server/daily/current/trusty-server-amd64.iso"
+			],
+			"iso_checksum": "abd10cda2fca9a94c925f47255194110",
+			"iso_checksum_type": "md5",
+			"ssh_username": "vagrant",
+			"ssh_password": "vagrant",
+			"http_directory": "../http/ubuntu/",
+			"headless": true,
+			"boot_wait": "5s",
+			"boot_command": [
+				"<esc><esc><enter><wait>",
+				"/install/vmlinuz ",
+				"preseed/url=http://{{.HTTPIP}}:{{.HTTPPort}}/preseed.cfg ",
+				"debian-installer=en_US auto locale=en_US kbd-chooser/method=us ",
+				"hostname={{.Name}} ",
+				"fb=false debconf/frontend=noninteractive ",
+				"keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=USA ",
+				"keyboard-configuration/variant=USA console-setup/ask_detect=false ",
+				"initrd=/install/initrd.gz -- <enter>"
+			],
+			"shutdown_command": "echo 'vagrant' | sudo -S -E shutdown -P now",
+			"tools_upload_flavor": "linux",
+			"vmdk_name": "disk",
+			"disk_type_id": "0",
+			"vmx_data": {
+				"MemTrimRate": "0",
+				"sched.mem.pshare.enable": "FALSE",
+				"mainMem.useNamedFile": "FALSE",
+				"prefvmx.minVmMemPct": "100"
+			}
+		},
+		{
+			"name": "ubuntu-14.04.i386.vmware",
+			"type": "vmware-iso",
+			"guest_os_type": "ubuntu",
+			"iso_urls": [
+				"http://cdimage.ubuntu.com/ubuntu-server/daily/current/trusty-server-i386.iso"
+			],
+			"iso_checksum": "bc8e053a3d366c5e2768c557267f75a5",
+			"iso_checksum_type": "md5",
+			"ssh_username": "vagrant",
+			"ssh_password": "vagrant",
+			"http_directory": "../http/ubuntu/",
+			"headless": true,
+			"boot_wait": "5s",
+			"boot_command": [
+				"<esc><esc><enter><wait>",
+				"/install/vmlinuz ",
+				"preseed/url=http://{{.HTTPIP}}:{{.HTTPPort}}/preseed.cfg ",
+				"debian-installer=en_US auto locale=en_US kbd-chooser/method=us ",
+				"hostname={{.Name}} ",
+				"fb=false debconf/frontend=noninteractive ",
+				"keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=USA ",
+				"keyboard-configuration/variant=USA console-setup/ask_detect=false ",
+				"initrd=/install/initrd.gz -- <enter>"
+			],
+			"shutdown_command": "echo 'vagrant' | sudo -S -E shutdown -P now",
+			"tools_upload_flavor": "linux",
+			"vmdk_name": "disk",
+			"disk_type_id": "0",
+			"vmx_data": {
+				"MemTrimRate": "0",
+				"sched.mem.pshare.enable": "FALSE",
+				"mainMem.useNamedFile": "FALSE",
+				"prefvmx.minVmMemPct": "100"
+			}
+		}
+	],
+	"provisioners": [
+		{
+			"type": "shell",
+			"execute_command": "echo 'vagrant' | sudo -S -E sh {{.Path}}",
+			"override": {
+				"ubuntu-14.04.amd64.virtualbox": {
+					"scripts": [
+						"../script/ubuntu/update.sh",
+						"../script/ubuntu/network.sh",
+						"../script/common/vagrant.sh",
+						"../script/common/virtualbox.sh",
+						"../script/common/motd.sh",
+						"../script/ubuntu/cleanup.sh"
+					]
+				},
+				"ubuntu-14.04.i386.virtualbox": {
+					"scripts": [
+						"../script/ubuntu/update.sh",
+						"../script/ubuntu/network.sh",
+						"../script/common/vagrant.sh",
+						"../script/common/virtualbox.sh",
+						"../script/common/motd.sh",
+						"../script/ubuntu/cleanup.sh"
+					]
+				},
+				"ubuntu-14.04.amd64.vmware": {
+					"scripts": [
+						"../script/ubuntu/update.sh",
+						"../script/ubuntu/network.sh",
+						"../script/common/vagrant.sh",
+						"../script/common/vmware.sh",
+						"../script/common/motd.sh",
+						"../script/ubuntu/cleanup.sh"
+					]
+				},
+				"ubuntu-14.04.i386.vmware": {
+					"scripts": [
+						"../script/ubuntu/update.sh",
+						"../script/ubuntu/network.sh",
+						"../script/common/vagrant.sh",
+						"../script/common/vmware.sh",
+						"../script/common/motd.sh",
+						"../script/ubuntu/cleanup.sh"
+					]
+				}
+			}
+		}
+	],
+
+	"post-processors": [
+		{
+			"type": "vagrant",
+			"output": "../build/{{.BuildName}}.box"
+		}
+	]
+}
