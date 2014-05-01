@@ -5,9 +5,10 @@
 			"type": "virtualbox-iso",
 			"guest_os_type": "Ubuntu_64",
 			"iso_urls": [
-				"http://cdimage.ubuntu.com/ubuntu-server/daily/current/trusty-server-amd64.iso"
+				"http://releases.ubuntu.com/14.04/ubuntu-14.04-server-amd64.iso",
+				"http://nl.releases.ubuntu.com/14.04/ubuntu-14.04-server-amd64.iso"
 			],
-			"iso_checksum": "abd10cda2fca9a94c925f47255194110",
+			"iso_checksum": "01545fa976c8367b4f0d59169ac4866c",
 			"iso_checksum_type": "md5",
 			"ssh_username": "vagrant",
 			"ssh_password": "vagrant",
@@ -33,9 +34,10 @@
 			"type": "virtualbox-iso",
 			"guest_os_type": "Ubuntu",
 			"iso_urls": [
-				"http://cdimage.ubuntu.com/ubuntu-server/daily/current/trusty-server-i386.iso"
+				"http://releases.ubuntu.com/14.04/ubuntu-14.04-server-i386.iso",
+				"http://nl.releases.ubuntu.com/14.04/ubuntu-14.04-server-i386.iso"
 			],
-			"iso_checksum": "bc8e053a3d366c5e2768c557267f75a5",
+			"iso_checksum": "08d25bf879e353686a974b7b14ae7d81",
 			"iso_checksum_type": "md5",
 			"ssh_username": "vagrant",
 			"ssh_password": "vagrant",
@@ -61,9 +63,10 @@
 			"type": "vmware-iso",
 			"guest_os_type": "ubuntu-64",
 			"iso_urls": [
-				"http://cdimage.ubuntu.com/ubuntu-server/daily/current/trusty-server-amd64.iso"
+				"http://releases.ubuntu.com/14.04/ubuntu-14.04-server-amd64.iso",
+				"http://nl.releases.ubuntu.com/14.04/ubuntu-14.04-server-amd64.iso"
 			],
-			"iso_checksum": "abd10cda2fca9a94c925f47255194110",
+			"iso_checksum": "01545fa976c8367b4f0d59169ac4866c",
 			"iso_checksum_type": "md5",
 			"ssh_username": "vagrant",
 			"ssh_password": "vagrant",
@@ -97,9 +100,10 @@
 			"type": "vmware-iso",
 			"guest_os_type": "ubuntu",
 			"iso_urls": [
-				"http://cdimage.ubuntu.com/ubuntu-server/daily/current/trusty-server-i386.iso"
+				"http://releases.ubuntu.com/14.04/ubuntu-14.04-server-i386.iso",
+				"http://nl.releases.ubuntu.com/14.04/ubuntu-14.04-server-i386.iso"
 			],
-			"iso_checksum": "bc8e053a3d366c5e2768c557267f75a5",
+			"iso_checksum": "08d25bf879e353686a974b7b14ae7d81",
 			"iso_checksum_type": "md5",
 			"ssh_username": "vagrant",
 			"ssh_password": "vagrant",
